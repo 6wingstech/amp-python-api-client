@@ -60,12 +60,12 @@ class ampRestEndpoints(object):
 
     # Orderbook Methods
 
-    def getOrderBookDepthOnPair(self, _base_token, _quote_token):
+    def getOrderBookDepthOnPair(self, _base_token, _quote_token, _user_address):
         ob_endpoint = rest_endpoints.GET_ORDERBOOK_DEPTH_ON_PAIR.format(address = _user_address)
         uri = self.base_endpoint + ob_endpoint
         return requests.get(uri).json()
 
-    def getFullOrderBookOnPair(self, _base_token, _quote_token):
+    def getFullOrderBookOnPair(self, _base_token, _quote_token, _user_address):
         ob_endpoint = rest_endpoints.GET_FULL_ORDERBOOK_ON_PAIR.format(address = _user_address)
         uri = self.base_endpoint + ob_endpoint
         return requests.get(uri).json()
